@@ -14,14 +14,15 @@ export const typeDefs = gql`
   }
   input RegisterInput {
     username: String!
-    password: String!
-    confirmPassword: String!
     email: String!
+    password: String!
+    confirmpassword: String!
   }
   type Query {
     getPosts: [Post]
   }
   type Mutation {
     register(registerInput: RegisterInput): User!
+    login(username: String!, password: String!): User!
   }
 `;
