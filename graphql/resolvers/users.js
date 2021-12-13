@@ -78,7 +78,7 @@ export const userResolvers = {
         username,
         password,
       });
-      const res = await newUser.save();
+      const res = await newUser.save(); 
       console.log("res is ", res._doc);
       //   res is  {
       //     username: 'siddique2',
@@ -98,5 +98,6 @@ export const userResolvers = {
         token,
       };
     },
+
   },
 };
