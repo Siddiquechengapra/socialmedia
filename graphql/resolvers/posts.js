@@ -34,6 +34,9 @@ export const postResolvers = {
         username: user.username,
       });
       const post = await newPost.save();
+      context.pubsub.publish("NEW_POST", {
+        newPost: post,
+      });
       return post;
     },
     async deletePost(_, { postId }, context) {
@@ -50,5 +53,5 @@ export const postResolvers = {
         throw new Error(err);
       }
     },
-  },
+  }
 };
